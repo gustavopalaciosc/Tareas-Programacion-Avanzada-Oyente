@@ -3,7 +3,7 @@ from parametros import ENERGIA_ACCION_HEROICA
 from tributo import Tributo
 from menu_printer import printer_menu_inicio, printer_menu_principal, printer_simulacion_hora
 from arenas import Arena
-from ambiente import Ambiente
+
 
 class Menus():
     
@@ -178,7 +178,7 @@ class Menus():
                     self.otros_tributos = []
                     self.Menu_inicio()
 
-                elif len(self.arena.jugadores) == 0:
+                elif len(self.arena.tributos) == 0:
                     print("Felicitaciones! Has ganado los Juegos del hambre!")
                     self.started = False
                     self.otros_tributos = []
@@ -237,7 +237,7 @@ class Menus():
                             self.otros_tributos = []
                             self.Menu_inicio()
                         
-                        elif len(self.arena.jugadores) == 0:
+                        elif len(self.arena.tributos) == 0:
                             print("Felicitaciones! Has ganado los Juegos del hambre!")
                             self.started = False
                             self.otros_tributos = []
@@ -279,7 +279,7 @@ class Menus():
                     self.otros_tributos = []
                     self.Menu_inicio()
             
-            elif len(self.arena.jugadores) == 0:
+            elif len(self.arena.tributos) == 0:
                     print("Felicitaciones! Has ganado los Juegos del hambre!")
                     self.started = False
                     self.otros_tributos = []
@@ -310,7 +310,7 @@ class Menus():
                     self.otros_tributos = []
                     self.Menu_inicio()
             
-            elif len(self.arena.jugadores) == 0:
+            elif len(self.arena.tributos) == 0:
                     print("Felicitaciones! Has ganado los Juegos del hambre!")
                     self.started = False
                     self.otros_tributos = []
