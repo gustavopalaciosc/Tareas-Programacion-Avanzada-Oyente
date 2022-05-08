@@ -35,9 +35,6 @@ class Menu(ABC):
         sys.exit()
 
     
-
-
-
 class Menu_inicio(Menu):
 
     def __init__(self, casino):
@@ -62,7 +59,6 @@ class Menu_inicio(Menu):
 
     def salir(self):
         return super().salir()
-
 
 
 class Menu_principal(Menu):
@@ -100,7 +96,6 @@ class Menu_principal(Menu):
 
     def salir(self):
         return super().salir()
-
 
 
 class Opciones_jugador(Menu):
@@ -146,9 +141,6 @@ class Opciones_jugador(Menu):
         mifile = open("jugadores.csv").readlines()
         player = mifile[entrada].split(",")
         print(f"Has elegido a {player[0]}, jugador que es {player[1]}")
-        #################################################################
-        #######Agregar asignacion de jugador a instancia de Casino#######
-        #################################################################
         self.casino.jugador = Jugador(player[0], player[1], int(player[2]), int(player[3]), int(player[4]), int(player[5]), int(player[6]), int(player[7]), int(player[8]), player[9].rstrip())
         self.casino.dinero_faltante -= self.casino.jugador.dinero
         return ["Principal"]
@@ -160,11 +152,6 @@ class Opciones_jugador(Menu):
         return super().salir()
 
 
-"""
-
-Agregar if statement para terminar juego en caso de ganar o perder
-
-"""
 class Opciones_juego(Menu):
     def __init__(self, casino):
         self.casino = casino
@@ -233,7 +220,6 @@ class Opciones_juego(Menu):
             return "Juego terminado"
 
 
-
 class Compra_bebestible(Menu):
     def __init__(self, casino):
         self.casino = casino
@@ -282,7 +268,6 @@ class Compra_bebestible(Menu):
             print(f" [{i}] | {self.casino.bebestibles[i].nombre} | {self.casino.bebestibles[i].tipo}    | {self.casino.bebestibles[i].precio}")
         print("\n [0] Volver")
         print(" [X] Salir")
-
     
 
 class Estado_jugador(Menu):
@@ -317,7 +302,6 @@ class Estado_jugador(Menu):
     
     def run(self):
         return super().run()
-
 
 
 class MenusDic(dict):
