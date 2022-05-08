@@ -26,8 +26,6 @@ class Juego():
             jugador.dinero -= apuesta
             casino.dinero_faltante += apuesta
 
-
-
     def prob_ganar(self, jugador, apuesta):
         pg = min(1, jugador.prob_ganar(apuesta, self) - (apuesta - (jugador.favorito(self) * 50 - (self.esperanza * 30)))  / 10000)
         return pg

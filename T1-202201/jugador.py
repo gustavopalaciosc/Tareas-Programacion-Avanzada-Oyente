@@ -51,7 +51,6 @@ class Jugador():
         else:
             self.__confianza = 0
     
-    
     def comprar_bebestible(self, bebestible):
 
         if self.dinero > bebestible.precio:
@@ -63,19 +62,15 @@ class Jugador():
         if self.personalidad == "Bebedor":
             self.cliente_recurrente(bebestible)
 
-
-
     """ Metodo principal para accion de jugar """
     def apostar(self, juego, casino):  
 
         if self.personalidad == "Casual":
             self.suerte_principiante()
 
-
         ge = round((self.ego + self.frustracion) * 0.15)
         self.energia -= ge
-
-        
+      
         if self.dinero >= juego.apuesta_min:
             
             while True:
@@ -106,24 +101,17 @@ class Jugador():
 
                 
                 except (ValueError, UnboundLocalError):
-                    print("Ingrese una apuesta valida!")
-
-
-                
-                       
+                    print("Ingrese una apuesta valida!")                  
 
         else:
             print("No tienes el dinero suficiente para poder apostar en este juego! Vo teni que ser del huachipato")
-                           
-    
-   
+               
     def prob_ganar(self, apuesta, juego):
     
         pg = min(1, max(0, (self.suerte * 15 - apuesta * 0.4 + self.confianza * 3 * self.favorito(juego) + self.carisma * 2)/1000 ))
 
         return pg
-    
-    
+       
     def favorito(self, juego):
         if juego.nombre == self.juego_favorito:
             return 1
@@ -135,7 +123,6 @@ class Jugador():
         self.suerte += 3
         if gano:
             self.frustracion += 5
-
 
     def tacano_extremo(self, apuesta, gano):
         if apuesta < PORCENTAJE_APUESTA_TACANO:

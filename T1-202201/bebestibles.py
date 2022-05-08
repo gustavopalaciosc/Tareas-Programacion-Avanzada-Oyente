@@ -39,7 +39,6 @@ class Jugo(Bebestible):
             print(f"El jugador {jugador.nombre} aumento su ego en 11 y disminuyo su frustracion en 10")
         
     
-
 class Gaseosa(Bebestible):
     
     def __init__(self, nombre, tipo, precio):
@@ -57,7 +56,6 @@ class Gaseosa(Bebestible):
         
         jugador.ego += 6
         print(f"El jugador {jugador.nombre} ha aumentado su ego en 6")
-
 
 
 class Brebaje_magico(Bebestible):

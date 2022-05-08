@@ -17,7 +17,6 @@ def bebidas(file):
     
     return b
 
-
 def juegos(file):
     j = {}
     mifile = open(file).readlines()
@@ -27,15 +26,11 @@ def juegos(file):
     return j
 
 
-
-
 if __name__ == "__main__":
     
     brebajes = bebidas("bebestibles.csv")
     games = juegos("juegos.csv")
-
     micasino = Casino(games, brebajes)
-    
     menus = MenusDic()
 
     menus["inicio"] = Menu_inicio(micasino)
